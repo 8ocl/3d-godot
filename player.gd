@@ -45,9 +45,6 @@ var acceleration = 2.0  # Adjust as needed for the desired acceleration rate
 # tracer blink ability
 var blink_dist = 7
 
-# gun variables
-@onready var gun_anim = $head/eyes/Camera3D/CIRNO/AnimationPlayer
-
 
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -154,10 +151,5 @@ func _physics_process(delta):
 		blink_direction.y = 0  # Set y component to 0 to exclude it from scaling
 		blink_direction *= blink_dist
 		direction = blink_direction
-	
-	if Input.is_action_pressed("shoot"):
-		if !gun_anim.is_playing():
-			gun_anim.play("shoot")
-	
 
 	move_and_slide()
