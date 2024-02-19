@@ -6,6 +6,8 @@ extends CharacterBody3D
 @onready var ray_cast_3d = $RayCast3D
 @onready var camera_3d = $head/eyes/Camera3D
 @onready var eyes = $head/eyes
+@onready var audio_stream_player_3d = $AudioStreamPlayer3D
+const FUMOSF = preload("res://Fumo Sound Effect From Touhou Project (128kbps).mp3")
 
 var gravity_force = 1
 var current_speed = 5.0
@@ -157,7 +159,10 @@ func _physics_process(delta):
 		blink_direction.y = 0  # Set y component to 0 to exclude it from scaling
 		blink_direction *= blink_dist
 		direction = blink_direction
+		$AudioStreamPlayer3D.stream = FUMOSF
+		$AudioStreamPlayer3D.play()
 	
+	# yoo im writing this with like an hour of sleep, ion understand any of this lol
 	if Input.is_action_pressed("shoot"):
 		if !gun_anim.is_playing():
 			gun_anim.play("shoot")

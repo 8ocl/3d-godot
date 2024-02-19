@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ibpos2o5vwgt"]
+[gd_scene load_steps=16 format=3 uid="uid://ibpos2o5vwgt"]
 
 [ext_resource type="Texture2D" uid="uid://dn5qhedgmcef6" path="res://3D/FPS-controller-assets-main (2)/assets/textures/dev/grids/Dark/texture_07.png" id="1_6y43g"]
 [ext_resource type="Texture2D" uid="uid://ryxxe52oj6bk" path="res://3D/FPS-controller-assets-main (2)/assets/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="2_sv1kp"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dma1box3cfk68" path="res://3D/FPS-controller-assets-main (2)/assets/textures/dev/grids/Dark/cirno_low_u1_v1.jpg" id="4_3r83l"]
 [ext_resource type="ArrayMesh" uid="uid://b6torm7lhl36" path="res://3D/FPS-controller-assets-main (2)/assets/textures/dev/grids/Dark/cirno_low.obj" id="5_gql4s"]
 [ext_resource type="PackedScene" uid="uid://b1k8to4ytooi5" path="res://CIRNOOO.tscn" id="6_je5o2"]
+[ext_resource type="AudioStream" uid="uid://cyqbyr3wt7paw" path="res://Fumo Sound Effect From Touhou Project (128kbps).mp3" id="7_ipxfn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cv6oq"]
 albedo_texture = ExtResource("4_3r83l")
@@ -106,4 +107,5 @@ fov = 81.0
 [node name="CIRNO" parent="player/head/eyes/Camera3D" instance=ExtResource("6_je5o2")]
 transform = Transform3D(-0.000348995, 0.00999391, 4.36848e-10, 0, -4.37114e-10, 0.01, 0.00999391, 0.000348995, 1.5255e-11, 0.475, -0.31, -0.525)
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="player"]
+[node name="FUMOSF" type="AudioStreamPlayer3D" parent="player"]
+stream = ExtResource("7_ipxfn")
