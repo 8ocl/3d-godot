@@ -104,4 +104,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
 fov = 81.0
 
 [node name="CIRNO" parent="player/head/eyes/Camera3D" instance=ExtResource("6_je5o2")]
-transform = Transform3D(-0.000348995, -0.00999391, -4.36848e-10, 0, -4.37114e-10, 0.01, -0.00999391, 0.000348995, 1.5255e-11, 0.475, -0.31, -0.525)
+transform = Transform3D(-0.000348995, 0.00999391, 4.36848e-10, 0, -4.37114e-10, 0.01, 0.00999391, 0.000348995, 1.5255e-11, 0.475, -0.31, -0.525)

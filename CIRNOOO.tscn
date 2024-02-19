@@ -44,7 +44,7 @@ _data = {
 transform = Transform3D(0.01, 0, 0, 0, -4.37114e-10, 0.01, 0, -0.01, -4.37114e-10, 0, 0, 0)
 
 [node name="CirnoLow" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.130515, 0, 0.144302)
+transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, 0.130515, 0, 0.144302)
 material_override = SubResource("StandardMaterial3D_jhceo")
 cast_shadow = 0
 mesh = ExtResource("2_ih4ls")
@@ -54,8 +54,8 @@ libraries = {
 "": SubResource("AnimationLibrary_2xs4v")
 }
 
-[node name="RayCast3D" type="RayCast3D" parent="."]
-transform = Transform3D(-1.75064e-07, -4.37114e-08, 1, 1.75064e-07, 1, 4.37114e-08, -4.005, 4.37114e-08, -4.37114e-08, 2.91217, -4.31455e-07, 9.87053)
-target_position = Vector3(0, 0, 1)
+[node name="gun_barrel" type="RayCast3D" parent="."]
+transform = Transform3D(-2.18557e-06, 0, 50, 0, 50, 0, -50, 0, -2.18557e-06, -128.077, 126.362, -30.6565)
+target_position = Vector3(0, 0, 10)
 debug_shape_custom_color = Color(1, 0, 1, 1)
 debug_shape_thickness = 5

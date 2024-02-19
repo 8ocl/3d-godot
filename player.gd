@@ -46,7 +46,10 @@ var acceleration = 2.0  # Adjust as needed for the desired acceleration rate
 var blink_dist = 7
 
 # gun variables
+var bullet = load("res://bullet.tscn")
+var instance
 @onready var gun_anim = $head/eyes/Camera3D/CIRNO/AnimationPlayer
+@onready var gun_barrel = $head/eyes/Camera3D/CIRNO/gun_barrel
 
 
 func _input(event):
@@ -158,6 +161,11 @@ func _physics_process(delta):
 	if Input.is_action_pressed("shoot"):
 		if !gun_anim.is_playing():
 			gun_anim.play("shoot")
+			instance = bullet.instantiate()
+			instance.position = gun_barrel.global_position
+			instance.transform.basis = gun_barrel.global_transform.basis
+			get_parent().add_child(instance)
+			
 	
 
 	move_and_slide()
