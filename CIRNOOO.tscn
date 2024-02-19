@@ -53,3 +53,9 @@ mesh = ExtResource("2_ih4ls")
 libraries = {
 "": SubResource("AnimationLibrary_2xs4v")
 }
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(-1.75064e-07, -4.37114e-08, 1, 1.75064e-07, 1, 4.37114e-08, -4.005, 4.37114e-08, -4.37114e-08, 2.91217, -4.31455e-07, 9.87053)
+target_position = Vector3(0, 0, 1)
+debug_shape_custom_color = Color(1, 0, 1, 1)
+debug_shape_thickness = 5
