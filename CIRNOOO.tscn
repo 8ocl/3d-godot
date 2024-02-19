@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1k8to4ytooi5"]
+
+[ext_resource type="Texture2D" uid="uid://dma1box3cfk68" path="res://3D/FPS-controller-assets-main (2)/assets/textures/dev/grids/Dark/cirno_low_u1_v1.jpg" id="1_xama1"]
+[ext_resource type="ArrayMesh" uid="uid://b6torm7lhl36" path="res://3D/FPS-controller-assets-main (2)/assets/textures/dev/grids/Dark/cirno_low.obj" id="2_ih4ls"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jhceo"]
+albedo_texture = ExtResource("1_xama1")
+
+[node name="CIRNO" type="Node3D"]
+transform = Transform3D(0.01, 0, 0, 0, -4.37114e-10, 0.01, 0, -0.01, -4.37114e-10, 0, 0, 0)
+
+[node name="CirnoLow" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.130515, 0, 0.144302)
+material_override = SubResource("StandardMaterial3D_jhceo")
+cast_shadow = 0
+mesh = ExtResource("2_ih4ls")

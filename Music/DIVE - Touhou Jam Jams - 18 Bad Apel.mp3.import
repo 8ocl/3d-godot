@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ns6xghnf23pe"
+path="res://.godot/imported/DIVE - Touhou Jam Jams - 18 Bad Apel.mp3-d5ea9a54b0bdd721300527f3c216287a.mp3str"
+
+[deps]
+
+source_file="res://Music/DIVE - Touhou Jam Jams - 18 Bad Apel.mp3"
+dest_files=["res://.godot/imported/DIVE - Touhou Jam Jams - 18 Bad Apel.mp3-d5ea9a54b0bdd721300527f3c216287a.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

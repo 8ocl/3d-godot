@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://clblnldmgnlmm"
+path="res://.godot/imported/[8bit LSDj] Cirno_'s Perfect Math Class Chiptune Remix (128kbps).mp3-7a368c2a40f1563b5ec0b6e5dc51f4ff.mp3str"
+
+[deps]
+
+source_file="res://Music/[8bit LSDj] Cirno_'s Perfect Math Class Chiptune Remix (128kbps).mp3"
+dest_files=["res://.godot/imported/[8bit LSDj] Cirno_'s Perfect Math Class Chiptune Remix (128kbps).mp3-7a368c2a40f1563b5ec0b6e5dc51f4ff.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

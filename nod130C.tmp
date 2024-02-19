@@ -1,0 +1,93 @@
+[gd_scene load_steps=13 format=3 uid="uid://ibpos2o5vwgt"]
+
+[ext_resource type="Texture2D" uid="uid://dn5qhedgmcef6" path="res://3D/FPS-controller-assets-main (2)/assets/textures/dev/grids/Dark/texture_07.png" id="1_6y43g"]
+[ext_resource type="Texture2D" uid="uid://ryxxe52oj6bk" path="res://3D/FPS-controller-assets-main (2)/assets/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="2_sv1kp"]
+[ext_resource type="Script" path="res://player.gd" id="3_a3sk2"]
+[ext_resource type="Texture2D" uid="uid://dma1box3cfk68" path="res://3D/FPS-controller-assets-main (2)/assets/textures/dev/grids/Dark/cirno_low_u1_v1.jpg" id="4_3r83l"]
+[ext_resource type="ArrayMesh" uid="uid://b6torm7lhl36" path="res://3D/FPS-controller-assets-main (2)/assets/textures/dev/grids/Dark/cirno_low.obj" id="5_gql4s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4m37c"]
+albedo_texture = ExtResource("1_6y43g")
+uv1_triplanar = true
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_tvxqo"]
+panorama = ExtResource("2_sv1kp")
+
+[sub_resource type="Sky" id="Sky_45qbr"]
+sky_material = SubResource("PanoramaSkyMaterial_tvxqo")
+
+[sub_resource type="Environment" id="Environment_81kkj"]
+background_mode = 2
+sky = SubResource("Sky_45qbr")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fllx7"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5ux2s"]
+height = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cv6oq"]
+albedo_texture = ExtResource("4_3r83l")
+
+[node name="world" type="Node3D"]
+
+[node name="stage" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
+size = Vector3(20, 1, 20)
+material = SubResource("StandardMaterial3D_4m37c")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="stage"]
+transform = Transform3D(0.774282, -0.63284, 0, 0.63284, 0.774282, 0, 0, 0, 1, -68.9084, -51.6308, 0.0238457)
+use_collision = true
+size = Vector3(157.352, 1, 20)
+material = SubResource("StandardMaterial3D_4m37c")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 1.7, 0)
+use_collision = true
+size = Vector3(1, 1, 20)
+material = SubResource("StandardMaterial3D_4m37c")
+
+[node name="env" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="env"]
+environment = SubResource("Environment_81kkj")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="env"]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("3_a3sk2")
+
+[node name="standing_collision_shape" type="CollisionShape3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_fllx7")
+
+[node name="crouching_collision_shape" type="CollisionShape3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("CapsuleShape3D_5ux2s")
+
+[node name="RayCast3D" type="RayCast3D" parent="player"]
+target_position = Vector3(0, 2, 0)
+
+[node name="Slide_check" type="RayCast3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.0208969, -0.0135393, -0.0710258)
+target_position = Vector3(0, 1, 0)
+
+[node name="head" type="Node3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
+
+[node name="eyes" type="Node3D" parent="player/head"]
+
+[node name="Camera3D" type="Camera3D" parent="player/head/eyes"]
+
+[node name="CirnoLow" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0517638, 0.193185, 8.44439e-09, 0, -8.74228e-09, 0.2, 0.193185, -0.0517638, -2.26267e-09, -8.15826, -4.76837e-07, 9.77796)
+material_override = SubResource("StandardMaterial3D_cv6oq")
+mesh = ExtResource("5_gql4s")

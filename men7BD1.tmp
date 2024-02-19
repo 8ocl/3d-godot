@@ -1,0 +1,98 @@
+[gd_scene load_steps=13 format=3 uid="uid://cbcxb4i680rnv"]
+
+[ext_resource type="FontFile" uid="uid://dhd77fooj6ao6" path="res://Aller_Rg.ttf" id="1_cqgqd"]
+[ext_resource type="Script" path="res://Menu.gd" id="1_txxp6"]
+[ext_resource type="Texture2D" uid="uid://d5w031l2mrmb" path="res://Background/uMhbnzr (2).png" id="3_gtrlv"]
+[ext_resource type="Texture2D" uid="uid://duvq1ya6qrwdd" path="res://sprites/tumblr_7bbafafbd357d2749b894ad7a1fa5ef9_ff8e8fd2_1280.png" id="4_601u0"]
+[ext_resource type="AudioStream" uid="uid://clblnldmgnlmm" path="res://Music/[8bit LSDj] Cirno_'s Perfect Math Class Chiptune Remix (128kbps).mp3" id="5_qelf7"]
+[ext_resource type="Texture2D" uid="uid://blllwsvgodqy0" path="res://sprites/image-removebg-preview (6).png" id="6_152hu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hx1mt"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ymtw"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="Theme" id="Theme_ovn16"]
+Button/colors/font_color = Color(0.733333, 0.329412, 0.596078, 1)
+Button/colors/font_hover_color = Color(0.94902, 0.94902, 0.94902, 0)
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("1_cqgqd")
+Button/styles/hover = SubResource("StyleBoxFlat_hx1mt")
+Button/styles/normal = SubResource("StyleBoxFlat_4ymtw")
+
+[sub_resource type="FontVariation" id="FontVariation_q8ouv"]
+
+[sub_resource type="FontVariation" id="FontVariation_7tv8e"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pukw2"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_ovn16")
+script = ExtResource("1_txxp6")
+
+[node name="ImageTexture" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1792.0
+offset_bottom = 1005.0
+scale = Vector2(0.56, 0.56)
+texture = ExtResource("3_gtrlv")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = -30.0
+offset_top = 249.0
+offset_right = 238.705
+offset_bottom = 462.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_direction = 1
+layout_mode = 2
+theme_override_constants/separation = 65
+alignment = 1
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_q8ouv")
+theme_override_font_sizes/font_size = 61
+text = "Play"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_7tv8e")
+theme_override_font_sizes/font_size = 61
+text = "Quit"
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_pukw2")
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="CirnoBottle" type="Sprite2D" parent="."]
+position = Vector2(559, 298)
+texture = ExtResource("4_601u0")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_qelf7")
+volume_db = -0.7
+autoplay = true
+
+[node name="Image-removebg-preview(6)" type="Sprite2D" parent="."]
+position = Vector2(685, 358)
+rotation = 0.223349
+scale = Vector2(0.439614, 0.439614)
+texture = ExtResource("6_152hu")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_bit_cpmc_finished"]

@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhmcygpra8ex"]
+
+[ext_resource type="Script" path="res://CharacterBody3D.gd" id="1_u6fos"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fcf0n"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x7qna"]
+size = Vector3(6, 0.191162, 8)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0crmb"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_fcf0n")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.155151, -0.5)
+shape = SubResource("BoxShape3D_x7qna")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.13822, 0)
+script = ExtResource("1_u6fos")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.647337, -1)
+shape = SubResource("CapsuleShape3D_0crmb")
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]

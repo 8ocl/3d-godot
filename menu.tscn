@@ -1,0 +1,123 @@
+[gd_scene load_steps=15 format=3 uid="uid://cbcxb4i680rnv"]
+
+[ext_resource type="Script" path="res://Menu.gd" id="1_txxp6"]
+[ext_resource type="PackedScene" uid="uid://2gbh2o4xje8k" path="res://gpu_particles_2d.tscn" id="3_amcvh"]
+[ext_resource type="Texture2D" uid="uid://d5w031l2mrmb" path="res://Background/uMhbnzr (2).png" id="3_gtrlv"]
+[ext_resource type="FontFile" uid="uid://yxikms7ljivh" path="res://DejaVuSans-Bold.ttf" id="3_xevom"]
+[ext_resource type="Texture2D" uid="uid://duvq1ya6qrwdd" path="res://sprites/tumblr_7bbafafbd357d2749b894ad7a1fa5ef9_ff8e8fd2_1280.png" id="4_601u0"]
+[ext_resource type="AudioStream" uid="uid://clblnldmgnlmm" path="res://Music/[8bit LSDj] Cirno_'s Perfect Math Class Chiptune Remix (128kbps).mp3" id="5_qelf7"]
+[ext_resource type="Texture2D" uid="uid://blllwsvgodqy0" path="res://sprites/image-removebg-preview (6).png" id="6_152hu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lnpe0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wux6r"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p6wno"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yermo"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kn6lf"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="Theme" id="Theme_hfiy6"]
+Button/colors/font_color = Color(1, 0.996078, 0.996078, 1)
+Button/colors/font_hover_color = Color(0.996078, 0.87451, 0.917647, 1)
+Button/colors/font_hover_pressed_color = Color(0.996078, 0.811765, 0.878431, 1)
+Button/colors/font_outline_color = Color(0.733333, 0.329412, 0.596078, 1)
+Button/colors/font_outline_pressed_color = Color(0.996078, 0.670588, 0.8, 1)
+Button/colors/font_pressed_color = Color(0.996078, 0.772549, 0.854902, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0)
+Button/colors/icon_focus_color = Color(1, 1, 1, 0)
+Button/colors/icon_hover_color = Color(1, 1, 1, 0)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 0)
+Button/colors/icon_normal_color = Color(1, 1, 1, 0)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 0)
+Button/fonts/font = ExtResource("3_xevom")
+Button/styles/disabled = SubResource("StyleBoxFlat_lnpe0")
+Button/styles/focus = SubResource("StyleBoxFlat_wux6r")
+Button/styles/hover = SubResource("StyleBoxFlat_p6wno")
+Button/styles/normal = SubResource("StyleBoxFlat_yermo")
+Button/styles/pressed = SubResource("StyleBoxFlat_kn6lf")
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_x1qwe"]
+polygon = PackedVector2Array(635.026, 326.347, 638.045, 325.373, 641.064, 322.45, 646.096, 318.554, 652.134, 318.554, 651.128, 312.709, 648.109, 312.709, 650.122, 298.096, 656.16, 299.07, 656.16, 293.225, 680.313, 298.096, 682.326, 295.174, 686.351, 296.148, 688.364, 292.251, 691.383, 293.225, 694.402, 288.354, 704.466, 291.277, 707.485, 297.122, 710.505, 302.967, 714.53, 306.864, 714.53, 314.657, 721.575, 316.605, 721.575, 320.502, 729.626, 323.425, 728.619, 327.321, 733.651, 329.27, 733.651, 335.115, 737.677, 338.037, 738.683, 345.831, 742.709, 347.779)
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_hfiy6")
+script = ExtResource("1_txxp6")
+
+[node name="ImageTexture" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1792.0
+offset_bottom = 1005.0
+scale = Vector2(0.56, 0.56)
+texture = ExtResource("3_gtrlv")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = -23.0
+offset_top = 260.0
+offset_right = 245.705
+offset_bottom = 473.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_direction = 1
+layout_mode = 2
+theme_override_constants/separation = 65
+alignment = 1
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.733333, 0.329412, 0.596078, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("3_xevom")
+theme_override_font_sizes/font_size = 30
+text = "Play Game"
+flat = true
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.733333, 0.329412, 0.596078, 1)
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("3_xevom")
+theme_override_font_sizes/font_size = 30
+text = "Quit Game
+"
+flat = true
+
+[node name="CirnoBottle" type="Sprite2D" parent="."]
+position = Vector2(559, 298)
+texture = ExtResource("4_601u0")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_qelf7")
+volume_db = -0.7
+autoplay = true
+
+[node name="Image-removebg-preview(6)" type="Sprite2D" parent="."]
+position = Vector2(685, 358)
+rotation = 0.223349
+scale = Vector2(0.439614, 0.439614)
+texture = ExtResource("6_152hu")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+scale = Vector2(0.99366, 1.02651)
+occluder = SubResource("OccluderPolygon2D_x1qwe")
+
+[node name="SnowGenerator" parent="." instance=ExtResource("3_amcvh")]
+position = Vector2(559, 0)
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_bit_cpmc_finished"]

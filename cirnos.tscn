@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgwmd1apilops"]
+
+[sub_resource type="Gradient" id="Gradient_yb70s"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_mpogk"]
+gradient = SubResource("Gradient_yb70s")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_n367f"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(550, 1, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+gravity = Vector3(0, 20, 0)
+radial_accel_min = -1.0
+radial_accel_max = -1.0
+damping_min = 5.0
+damping_max = 5.0
+scale_max = 3.0
+color = Color(0.807843, 0, 0.0431373, 1)
+color_ramp = SubResource("GradientTexture1D_mpogk")
+collision_mode = 1
+collision_friction = 1.0
+collision_bounce = 0.0
+
+[node name="GPUParticles2D" type="GPUParticles2D"]
+amount = 32
+process_material = SubResource("ParticleProcessMaterial_n367f")
+lifetime = 20.0

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b6torm7lhl36"
+path="res://.godot/imported/cirno_low.obj-82a7d372a39b587cadba1930d6f8b7bd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cirno_low.obj-82a7d372a39b587cadba1930d6f8b7bd.mesh"]
+
+source_file="res://3D/FPS-controller-assets-main (2)/assets/textures/dev/grids/Dark/cirno_low.obj"
+dest_files=["res://.godot/imported/cirno_low.obj-82a7d372a39b587cadba1930d6f8b7bd.mesh", "res://.godot/imported/cirno_low.obj-82a7d372a39b587cadba1930d6f8b7bd.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

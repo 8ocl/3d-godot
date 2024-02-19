@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bjshnkwcj0dnw"
+path="res://.godot/imported/Cirno_'s Theme - Beloved Tomboyish Girl 【東方Touhou _ 8bit Remix】 (128kbps).mp3-58fd02a1c078b56b0519c20d609a49fc.mp3str"
+
+[deps]
+
+source_file="res://Music/Cirno_'s Theme - Beloved Tomboyish Girl 【東方Touhou _ 8bit Remix】 (128kbps).mp3"
+dest_files=["res://.godot/imported/Cirno_'s Theme - Beloved Tomboyish Girl 【東方Touhou _ 8bit Remix】 (128kbps).mp3-58fd02a1c078b56b0519c20d609a49fc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
