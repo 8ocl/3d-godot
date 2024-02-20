@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ibpos2o5vwgt"]
+[gd_scene load_steps=17 format=3 uid="uid://ibpos2o5vwgt"]
 
 [ext_resource type="Texture2D" uid="uid://dn5qhedgmcef6" path="res://3D/FPS-controller-assets-main (2)/assets/textures/dev/grids/Dark/texture_07.png" id="1_6y43g"]
 [ext_resource type="Texture2D" uid="uid://ryxxe52oj6bk" path="res://3D/FPS-controller-assets-main (2)/assets/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="2_sv1kp"]
@@ -10,6 +10,10 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cv6oq"]
 albedo_texture = ExtResource("4_3r83l")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_62pg5"]
+radius = 2.0135
+height = 4.02701
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4m37c"]
 albedo_texture = ExtResource("1_6y43g")
@@ -37,10 +41,17 @@ glow_enabled = true
 
 [node name="world" type="Node3D"]
 
-[node name="CirnoLow" type="MeshInstance3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CirnoLow" type="MeshInstance3D" parent="StaticBody3D"]
 transform = Transform3D(0.0517638, 0.193185, 8.44439e-09, 0, -8.74228e-09, 0.2, 0.193185, -0.0517638, -2.26267e-09, -8.04122, -0.217627, 8.26138)
 material_override = SubResource("StandardMaterial3D_cv6oq")
 mesh = ExtResource("5_gql4s")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1.99808e-08, -9.43186e-08, 1, -8.9407e-08, -1, -9.43186e-08, 1, -8.9407e-08, -1.99808e-08, -8.04122, 2.50078, 8.26138)
+shape = SubResource("CapsuleShape3D_62pg5")
 
 [node name="stage" type="Node3D" parent="."]
 

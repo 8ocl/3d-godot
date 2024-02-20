@@ -159,8 +159,7 @@ func _physics_process(delta):
 		blink_direction.y = 0  # Set y component to 0 to exclude it from scaling
 		blink_direction *= blink_dist
 		direction = blink_direction
-		$AudioStreamPlayer3D.stream = FUMOSF
-		$AudioStreamPlayer3D.play()
+
 	
 	# yoo im writing this with like an hour of sleep, ion understand any of this lol
 	if Input.is_action_pressed("shoot"):
@@ -170,6 +169,8 @@ func _physics_process(delta):
 			instance.position = gun_barrel.global_position
 			instance.transform.basis = gun_barrel.global_transform.basis
 			get_parent().add_child(instance)
+			$AudioStreamPlayer3D.stream = FUMOSF
+			$AudioStreamPlayer3D.play()
 			
 	
 
